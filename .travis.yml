@@ -8,7 +8,7 @@ before_install:
 script:
     - docker run -e CI=true nagavamsi/react-test npm test     
 
- aftrer_sucess:   
+after_success:   
     - docker build -t nagavamsi/multi-client ./client
     - docker build -t nagavamsi/multi-nginx ./nginx
     - docker build -t nagavamsi/multi-server ./server
