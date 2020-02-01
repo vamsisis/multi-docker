@@ -9,15 +9,15 @@ script:
     - docker run -e CI=true nagavamsi/react-test npm test     
 
 after_success:   
-    - docker build -t nagavamsi/multi-client ./client
-    - docker build -t nagavamsi/multi-nginx ./nginx
-    - docker build -t nagavamsi/multi-server ./server
-    - docker build -t nagavamsi/multi-worker ./worker 
+    - docker build -t 1813354/multi-client ./client
+    - docker build -t 1813354/multi-nginx ./nginx
+    - docker build -t 1813354/multi-server ./server
+    - docker build -t 1813354/multi-worker ./worker 
     # log in to docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
     # take those images and push them to dockerhub
-    - docker push nagavamsi/multi-client 
-    - docker push nagavamsi/multi-nginx
-    - docker push nagavamsi/multi-server 
-    - docker push nagavamsi/multi-worker
+    - docker push 1813354/multi-client 
+    - docker push 1813354/multi-nginx
+    - docker push 1813354/multi-server 
+    - docker push 1813354/multi-worker
 
